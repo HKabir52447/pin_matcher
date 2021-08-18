@@ -35,14 +35,21 @@ function backSpace(){
 }
 
 function verifyPin(){
-    let generPin = document.getElementById('display-pin').value;
+    var generPin = document.getElementById('display-pin').value;
     let yourPin = document.getElementById('typed-numbers').value;
     if(generPin == yourPin){
         document.getElementById('notify-success').style.display = 'block';
         document.getElementById('notify-fail').style.display = 'none';
     }
     else{
+        let getLeft = document.getElementById('try-left');
+        let leftText = parseInt(getLeft.innerText);
+        leftText--
+        if(leftText >= 0){
+            getLeft.innerText = leftText;
+        }
         document.getElementById('notify-fail').style.display = 'block';
-        document.getElementById('notify-success').style.display = 'none';
+        document.getElementById('notify-success').style.display = 'none';       
     }
 }
+ 
